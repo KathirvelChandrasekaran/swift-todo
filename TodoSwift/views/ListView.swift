@@ -23,11 +23,17 @@ struct ListView: View {
                 .onDelete(perform: listViewModel.deleteItem)
                 .onMove(perform: listViewModel.moveItem)
             }
+            .overlay(Group {
+                if(listViewModel.items.isEmpty) {
+                    ZStack() {
+                        Text("Please add item using **Add Button**")
+                    }
+                }
+            })
             .navigationTitle("Todo List")
             .navigationBarItems(
                 leading: EditButton(),
-                trailing: NavigationLink("Add", destination: AddView()
-                                        )
+                trailing: NavigationLink("Add", destination: AddView())
             )
     }
     

@@ -14,17 +14,12 @@ class ListViewModel: ObservableObject {
         getItems()
     }
     
-    func getItems() {
-        let newItems = [
-            ItemModel(title: "1st item", isCompleted: true),
-            ItemModel(title: "2nd item", isCompleted: true),
-            ItemModel(title: "3rd item", isCompleted: false)
-        ]
-        items.append(contentsOf: newItems)
-    }
-    
     func deleteItem(indexSet: IndexSet) {
-        items.remove(atOffsets: indexSet)
+        for index in indexSet {
+            DBManager().deleteItem(idVal: items[index].id)
+            items.remove(atOffsets: indexSet)
+            getItems()
+        }
     }
     
     func moveItem(from: IndexSet, to: Int) {
@@ -32,14 +27,21 @@ class ListViewModel: ObservableObject {
     }
     
     func addItem(title: String) {
-        let newItem = ItemModel(title: title, isCompleted: false)
-        items.append(newItem)
+        DBManager().addItem(titleValue: title, isCompletedValue: false)
+        getItems()
     }
     
+    func getItems() {
+        let todoItems = DBManager().getItems()
+        items = todoItems
+    }
+
     func updateItem(item: ItemModel) {
         if let index = items.firstIndex(where: { $0.id == item.id }) {
-            items[index] = item.updateCompletion()
+            items[index] = item
+            DBManager().updateItem(idVal: item.id, titleVal: item.title, isCompletedVal: !item.isCompleted)
         }
-        
+        getItems()
     }
+    
 }
