@@ -27,7 +27,7 @@ class ListViewModel: ObservableObject {
     }
     
     func addItem(title: String) {
-        DBManager().addItem(titleValue: title, isCompletedValue: false)
+        DBManager().addItem(titleValue: title, isCompletedValue: "No")
         getItems()
     }
     
@@ -39,7 +39,7 @@ class ListViewModel: ObservableObject {
     func updateItem(item: ItemModel) {
         if let index = items.firstIndex(where: { $0.id == item.id }) {
             items[index] = item
-            DBManager().updateItem(idVal: item.id, titleVal: item.title, isCompletedVal: !item.isCompleted)
+            DBManager().updateItem(idVal: item.id, titleVal: item.title, isCompletedVal: item.isCompleted == "Yes" ? "No" : "Yes")
         }
         getItems()
     }

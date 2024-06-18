@@ -12,11 +12,9 @@ class DBManager {
     // DB Instance
     private var db: Connection!
     
-    // Table and Column instance
-    private var items: Table!
     private var id: Expression<String>!
     private var title: Expression<String>!
-    private var isCompleted: Expression<Bool>!
+    private var isCompleted: Expression<String>!
     
     init () {
         do {
@@ -24,18 +22,15 @@ class DBManager {
             
             print("DB Path ", path)
             db = try Connection("\(path)/todos.sqlite3")
-            items = Table("items")
-            
-            id = Expression<String>("id")
-            title = Expression<String>("title")
-            isCompleted = Expression<Bool>("isCompleted")
+            let createTableString = try db.prepare("""
+            CREATE TABLE items(
+            id CHAR(255) PRIMARY KEY NOT NULL,
+            title CHAR(255),
+            isCompleted CHAR(255));
+            """)
             
             if (!UserDefaults.standard.bool(forKey: "is_db_created")) {
-                try db.run(items.create { (t) in
-                    t.column(id, primaryKey: true)
-                    t.column(title)
-                    t.column(isCompleted)
-                })
+                try createTableString.run()
                 UserDefaults.standard.set(true, forKey: "is_db_created")
             }
         } catch {
@@ -43,10 +38,10 @@ class DBManager {
         }
     }
     
-    public func addItem(titleValue: String, isCompletedValue: Bool) {
+    public func addItem(titleValue: String, isCompletedValue: String) {
         do {
-            let rowid = try db.run(items.insert(id <- UUID().uuidString, title <- titleValue, isCompleted <- isCompletedValue))
-            print("Row ID", rowid)
+            let queryString = try db.prepare("INSERT INTO items (id, title, isCompleted) VALUES (?, ?, ?)")
+            try queryString.run(UUID().uuidString, titleValue, isCompletedValue)
         } catch {
             print("Error in inserting the data ", error.localizedDescription)
         }
@@ -54,13 +49,14 @@ class DBManager {
     
     public func getItems() -> [ItemModel] {
         var _itemModes: [ItemModel] = []
-        items = items.order(id.desc)
+        let queryString = "SELECT * FROM items"
         do {
-            for item in try db.prepare(items) {
+            for item in try db.prepare(queryString) {
                 let itemModel: ItemModel = ItemModel()
-                itemModel.id = item[id]
-                itemModel.title = item[title]
-                itemModel.isCompleted = item[isCompleted]
+                print("Items ", item)
+                itemModel.id = item[0] as! String
+                itemModel.title = item[1] as! String
+                itemModel.isCompleted = item[2] as! String
                 
                 _itemModes.append(itemModel)
             }
@@ -72,18 +68,18 @@ class DBManager {
     
     public func deleteItem(idVal: String) {
         do {
-            let item: Table = items.filter(id == idVal)
-            try db.run(item.delete())
+            let queryString = try db.prepare("DELETE FROM items WHERE id = ?")
+            try queryString.run(idVal)
         } catch {
             print("Error in deleting the data ", error.localizedDescription)
         }
     }
     
-    public func updateItem(idVal: String, titleVal: String, isCompletedVal: Bool) {
+    public func updateItem(idVal: String, titleVal: String, isCompletedVal: String) {
         do {
-            let item: Table = items.filter(id == idVal)
-             
-            try db.run(item.update(title <- title, isCompleted <- isCompletedVal))
+            let queryString = try db.prepare("UPDATE items set isCompleted = ? WHERE id = ?")
+            
+            try queryString.run(isCompletedVal, idVal)
         } catch {
             print("Error in updating the data ", error.localizedDescription)
         }

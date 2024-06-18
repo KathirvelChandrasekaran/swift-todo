@@ -11,8 +11,8 @@ struct ListRowView: View {
     let item: ItemModel
     var body: some View {
         HStack {
-            Image(systemName: item.isCompleted ? "checkmark.circle" : "circle")
-                .foregroundStyle(item.isCompleted ? .green : .red)
+            Image(systemName: item.isCompleted == "Yes" ? "checkmark.circle" : "circle")
+                .foregroundStyle(item.isCompleted == "Yes" ? .green : .red)
             Text(item.title)
         }
     }
