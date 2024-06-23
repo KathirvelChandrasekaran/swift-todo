@@ -9,8 +9,11 @@ import SwiftUI
 
 struct ListView: View {
     @EnvironmentObject var listViewModel: ListViewModel
-    
+    @StateObject var storeKit = StoreKitManager()
+    @State private var isPresented = false
+        
     var body: some View {
+        VStack {
             List {
                 ForEach(listViewModel.items) {
                     item in ListRowView(item: item)
@@ -33,11 +36,33 @@ struct ListView: View {
             .navigationTitle("Todo List")
             .navigationBarItems(
                 leading: EditButton(),
-                trailing: NavigationLink("Add", destination: AddView())
+                trailing: Group {
+                    let allowedCount = calculateAllowedCount()
+                    if listViewModel.items.count < allowedCount {
+                        NavigationLink("Add", destination: AddView())
+                    } else {
+                        Button(action: {
+                            isPresented.toggle()
+                        }, label: {
+                            Text("Purchase Items")
+                        })
+                        .sheet(isPresented: $isPresented, content: {
+                            PurchaseItem(dismissSheet: $isPresented)
+                                .presentationDetents([.height(250), .medium, .large])
+                                .presentationDragIndicator(.hidden)
+                        })
+                    }
+                }
             )
+            
+        }
     }
     
-    
+    func calculateAllowedCount() -> Int {
+        let allowedCount = storeKit.purchasedItems.count > 0 ? 50 : 5
+        print(allowedCount)
+        return allowedCount
+    }
 }
 
 #Preview {

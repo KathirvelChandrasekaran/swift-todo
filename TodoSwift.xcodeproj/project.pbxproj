@@ -12,6 +12,10 @@
 		2E52F55C2BF0FC5A00AC9A68 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E52F55B2BF0FC5A00AC9A68 /* Preview Assets.xcassets */; };
 		2E9636C32C1B3FE6002CC21A /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 2E9636C22C1B3FE6002CC21A /* SQLite */; };
 		2E9636C52C1B403B002CC21A /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9636C42C1B403B002CC21A /* DBManager.swift */; };
+		2E9B02232C265D0600FB4CD0 /* Product.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 2E9B02222C265D0600FB4CD0 /* Product.storekit */; };
+		2E9B02252C265DC100FB4CD0 /* ProductList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E9B02242C265DC100FB4CD0 /* ProductList.plist */; };
+		2E9B02272C265E2900FB4CD0 /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9B02262C265E2900FB4CD0 /* StoreKitManager.swift */; };
+		2E9B02292C2660A100FB4CD0 /* PurchaseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9B02282C2660A100FB4CD0 /* PurchaseItem.swift */; };
 		2EC153DC2BF1A6AE0021BF8C /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC153DB2BF1A6AE0021BF8C /* ListView.swift */; };
 		2EC153DE2BF1A8300021BF8C /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC153DD2BF1A8300021BF8C /* ListRowView.swift */; };
 		2EC153E02BF1AA8E0021BF8C /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC153DF2BF1AA8E0021BF8C /* AddView.swift */; };
@@ -26,6 +30,10 @@
 		2E52F5592BF0FC5A00AC9A68 /* TodoSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodoSwift.entitlements; sourceTree = "<group>"; };
 		2E52F55B2BF0FC5A00AC9A68 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2E9636C42C1B403B002CC21A /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		2E9B02222C265D0600FB4CD0 /* Product.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Product.storekit; sourceTree = "<group>"; };
+		2E9B02242C265DC100FB4CD0 /* ProductList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ProductList.plist; sourceTree = "<group>"; };
+		2E9B02262C265E2900FB4CD0 /* StoreKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
+		2E9B02282C2660A100FB4CD0 /* PurchaseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseItem.swift; sourceTree = "<group>"; };
 		2EC153DB2BF1A6AE0021BF8C /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		2EC153DD2BF1A8300021BF8C /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
 		2EC153DF2BF1AA8E0021BF8C /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
@@ -64,6 +72,9 @@
 		2E52F5522BF0FC5500AC9A68 /* TodoSwift */ = {
 			isa = PBXGroup;
 			children = (
+				2E9B02242C265DC100FB4CD0 /* ProductList.plist */,
+				2E9B02222C265D0600FB4CD0 /* Product.storekit */,
+				2E9B02262C265E2900FB4CD0 /* StoreKitManager.swift */,
 				2E9636C62C1B4041002CC21A /* DB */,
 				2EC153E42BF1B9200021BF8C /* viewModels */,
 				2EC153E12BF1AD370021BF8C /* models */,
@@ -98,6 +109,7 @@
 				2EC153DB2BF1A6AE0021BF8C /* ListView.swift */,
 				2EC153DD2BF1A8300021BF8C /* ListRowView.swift */,
 				2EC153DF2BF1AA8E0021BF8C /* AddView.swift */,
+				2E9B02282C2660A100FB4CD0 /* PurchaseItem.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -149,7 +161,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
-				LastUpgradeCheck = 1530;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					2E52F54F2BF0FC5400AC9A68 = {
 						CreatedOnToolsVersion = 15.3;
@@ -184,6 +196,8 @@
 			files = (
 				2E52F55C2BF0FC5A00AC9A68 /* Preview Assets.xcassets in Resources */,
 				2E52F5582BF0FC5A00AC9A68 /* Assets.xcassets in Resources */,
+				2E9B02252C265DC100FB4CD0 /* ProductList.plist in Resources */,
+				2E9B02232C265D0600FB4CD0 /* Product.storekit in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E9B02272C265E2900FB4CD0 /* StoreKitManager.swift in Sources */,
 				2EC153E32BF1AD4C0021BF8C /* ItemModel.swift in Sources */,
 				2EC153E02BF1AA8E0021BF8C /* AddView.swift in Sources */,
 				2EC153E62BF1B9420021BF8C /* ListViewModel.swift in Sources */,
@@ -201,6 +216,7 @@
 				2EC153DC2BF1A6AE0021BF8C /* ListView.swift in Sources */,
 				2EC153DE2BF1A8300021BF8C /* ListRowView.swift in Sources */,
 				2E9636C52C1B403B002CC21A /* DBManager.swift in Sources */,
+				2E9B02292C2660A100FB4CD0 /* PurchaseItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +257,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -302,6 +319,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -329,6 +347,7 @@
 				CODE_SIGN_ENTITLEMENTS = TodoSwift/TodoSwift.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"TodoSwift/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -365,6 +384,7 @@
 				CODE_SIGN_ENTITLEMENTS = TodoSwift/TodoSwift.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"TodoSwift/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

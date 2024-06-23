@@ -23,12 +23,11 @@ class DBManager {
             print("DB Path ", path)
             db = try Connection("\(path)/todos.sqlite3")
             let createTableString = try db.prepare("""
-            CREATE TABLE items(
+            CREATE TABLE IF NOT EXISTS items(
             id CHAR(255) PRIMARY KEY NOT NULL,
             title CHAR(255),
             isCompleted CHAR(255));
             """)
-            
             if (!UserDefaults.standard.bool(forKey: "is_db_created")) {
                 try createTableString.run()
                 UserDefaults.standard.set(true, forKey: "is_db_created")
