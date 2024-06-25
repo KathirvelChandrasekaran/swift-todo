@@ -7,8 +7,18 @@
 
 import Foundation
 
-class ItemModel: Identifiable {
-    public var id: String = ""
-    public var title: String = ""
-    public var isCompleted: String = ""
+struct ItemModel: Codable, Hashable, Identifiable {
+    let id: String
+    let title: String
+    let isCompleted: String
+    
+    init(id: String = UUID().uuidString, title: String, isCompleted: String) {
+        self.id = id
+        self.title = title
+        self.isCompleted = isCompleted
+    }
+}
+
+struct Response: Codable {
+    let data: [ItemModel]
 }

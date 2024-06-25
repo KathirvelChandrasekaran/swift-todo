@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E2FB6D42C2A7D51007C9527 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2FB6D32C2A7D51007C9527 /* APIManager.swift */; };
 		2E52F5542BF0FC5500AC9A68 /* TodoSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52F5532BF0FC5500AC9A68 /* TodoSwiftApp.swift */; };
 		2E52F5582BF0FC5A00AC9A68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E52F5572BF0FC5A00AC9A68 /* Assets.xcassets */; };
 		2E52F55C2BF0FC5A00AC9A68 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E52F55B2BF0FC5A00AC9A68 /* Preview Assets.xcassets */; };
-		2E9636C52C1B403B002CC21A /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9636C42C1B403B002CC21A /* DBManager.swift */; };
 		2E9EDB8C2C291652002E636C /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 2E9EDB8B2C291652002E636C /* SQLite */; };
 		2EC153DC2BF1A6AE0021BF8C /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC153DB2BF1A6AE0021BF8C /* ListView.swift */; };
 		2EC153DE2BF1A8300021BF8C /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC153DD2BF1A8300021BF8C /* ListRowView.swift */; };
@@ -20,12 +20,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E2FB6D32C2A7D51007C9527 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		2E52F5502BF0FC5500AC9A68 /* TodoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E52F5532BF0FC5500AC9A68 /* TodoSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoSwiftApp.swift; sourceTree = "<group>"; };
 		2E52F5572BF0FC5A00AC9A68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E52F5592BF0FC5A00AC9A68 /* TodoSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodoSwift.entitlements; sourceTree = "<group>"; };
 		2E52F55B2BF0FC5A00AC9A68 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2E9636C42C1B403B002CC21A /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		2EC153DB2BF1A6AE0021BF8C /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		2EC153DD2BF1A8300021BF8C /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
 		2EC153DF2BF1AA8E0021BF8C /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
@@ -45,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E2FB6D22C2A7D42007C9527 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				2E2FB6D32C2A7D51007C9527 /* APIManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		2E52F5472BF0FC5400AC9A68 = {
 			isa = PBXGroup;
 			children = (
@@ -64,7 +72,7 @@
 		2E52F5522BF0FC5500AC9A68 /* TodoSwift */ = {
 			isa = PBXGroup;
 			children = (
-				2E9636C62C1B4041002CC21A /* DB */,
+				2E2FB6D22C2A7D42007C9527 /* API */,
 				2EC153E42BF1B9200021BF8C /* viewModels */,
 				2EC153E12BF1AD370021BF8C /* models */,
 				2EC153DA2BF1A69A0021BF8C /* views */,
@@ -82,14 +90,6 @@
 				2E52F55B2BF0FC5A00AC9A68 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		2E9636C62C1B4041002CC21A /* DB */ = {
-			isa = PBXGroup;
-			children = (
-				2E9636C42C1B403B002CC21A /* DBManager.swift */,
-			);
-			path = DB;
 			sourceTree = "<group>";
 		};
 		2EC153DA2BF1A69A0021BF8C /* views */ = {
@@ -200,7 +200,7 @@
 				2E52F5542BF0FC5500AC9A68 /* TodoSwiftApp.swift in Sources */,
 				2EC153DC2BF1A6AE0021BF8C /* ListView.swift in Sources */,
 				2EC153DE2BF1A8300021BF8C /* ListRowView.swift in Sources */,
-				2E9636C52C1B403B002CC21A /* DBManager.swift in Sources */,
+				2E2FB6D42C2A7D51007C9527 /* APIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
