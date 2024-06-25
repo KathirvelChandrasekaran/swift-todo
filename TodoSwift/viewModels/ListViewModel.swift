@@ -32,7 +32,6 @@ class ListViewModel: ObservableObject {
     
     func deleteItem(indexSet: IndexSet) {
         for index in indexSet {
-            print(index)
             APIManager().deleteItemFromList(withId: items[index].id, from: apiURL) {
                 result in
                 switch result {

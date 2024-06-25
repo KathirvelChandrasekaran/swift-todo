@@ -1,0 +1,145 @@
+{
+  "identifier" : "543D5AFC",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "E09D3169",
+      "localizations" : [
+        {
+          "description" : "10 Items can be added",
+          "displayName" : "10 Items",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "kathir.todo.one",
+      "referenceName" : "10 Items",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "11D71D55",
+      "localizations" : [
+        {
+          "description" : "20 Items can be added",
+          "displayName" : "20 Items",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "kathir.todo.two",
+      "referenceName" : "20 Items",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "5C20FEFF",
+      "localizations" : [
+        {
+          "description" : "30 Items can be added",
+          "displayName" : "30 Items",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "kathir.todo.three",
+      "referenceName" : "30 Items",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_failTransactionsEnabled" : false,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "CA53E998",
+      "localizations" : [
+
+      ],
+      "name" : "Todo Items",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "9.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "3114988F",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "50 Todo Items",
+              "displayName" : "Yearly Subscription",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "kathir.todo.yearly",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Yearly Subscription",
+          "subscriptionGroupID" : "CA53E998",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}
