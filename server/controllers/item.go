@@ -8,6 +8,7 @@ import (
 )
 
 type CreateItemInput struct {
+	ID          string `json:"id"`
 	Title       string `json:"title" binding:"required"`
 	IsCompleted string `json:"isCompleted" binding:"required"`
 }
@@ -30,7 +31,7 @@ func CreateItem(c *gin.Context) {
 		return
 	}
 
-	item := models.Item{Title: input.Title, IsCompleted: input.IsCompleted}
+	item := models.Item{ID: input.ID, Title: input.Title, IsCompleted: input.IsCompleted}
 	models.DB.Create(&item)
 
 	c.JSON(http.StatusOK, gin.H{"data": item})
