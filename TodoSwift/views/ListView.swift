@@ -11,48 +11,64 @@ struct ListView: View {
     @EnvironmentObject var listViewModel: ListViewModel
     @StateObject var storeKit = StoreKitManager()
     @State private var isPresented = false
+    @ObservedObject private var locationViewModel = LocationViewModel()
     
     var body: some View {
-            List {
-                ForEach(listViewModel.items) {
-                    item in ListRowView(item: item)
-                        .onTapGesture {
-                            withAnimation(.linear) {
-                                listViewModel.updateItem(item: item)
+        ZStack {
+                    VStack {
+                        List {
+                            ForEach(listViewModel.items) {
+                                item in ListRowView(item: item)
+                                    .onTapGesture {
+                                        withAnimation(.linear) {
+                                            listViewModel.updateItem(item: item)
+                                        }
+                                    }
                             }
+                            .onDelete(perform: listViewModel.deleteItem)
+                            .onMove(perform: listViewModel.moveItem)
                         }
-                }
-                .onDelete(perform: listViewModel.deleteItem)
-                .onMove(perform: listViewModel.moveItem)
-            }
-            .overlay(Group {
-                if(listViewModel.items.isEmpty) {
-                    ZStack() {
-                        Text("Please add item using **Add Button**")
-                    }
-                }
-            })
-            .navigationTitle("Todo List")
-            .navigationBarItems(
-                leading: EditButton(),
-                trailing: Group {
-                    let allowedCount = calculateAllowedCount()
-                    if listViewModel.items.count < allowedCount {
-                        NavigationLink("Add", destination: AddView())
-                    } else {
-                        Button(action: {
-                            isPresented.toggle()
-                        }, label: {
-                            Text("Purchase Items")
+                        .overlay(Group {
+                            if(listViewModel.items.isEmpty) {
+                                ZStack() {
+                                    Text("Please add item using **Add Button**")
+                                }
+                            }
                         })
-                        .sheet(isPresented: $isPresented, content: {
-                            PurchaseItem(dismissSheet: $isPresented)
-                                .presentationDetents([.height(250), .medium, .large])
-                                .presentationDragIndicator(.hidden)
-                        })
+                        .navigationTitle("Todo List")
+                        .navigationBarItems(
+                            leading: EditButton(),
+                            trailing: Group {
+                                let allowedCount = calculateAllowedCount()
+                                if listViewModel.items.count < allowedCount {
+                                    NavigationLink("Add", destination: AddView())
+                                } else {
+                                    Button(action: {
+                                        isPresented.toggle()
+                                    }, label: {
+                                        Text("Purchase Items")
+                                    })
+                                    .sheet(isPresented: $isPresented, content: {
+                                        PurchaseItem(dismissSheet: $isPresented)
+                                            .presentationDetents([.height(250), .medium, .large])
+                                            .presentationDragIndicator(.hidden)
+                                    })
+                                }
+                            }
+                        )
+                        Text(String(format: "Altitude: %.2f", locationViewModel.altitude))
+                            .padding(20)
+                            .frame(maxWidth: .infinity)
+                            .background(.green)
+                            .foregroundColor(.white)
+                            .cornerRadius(20)
+                        Text(locationViewModel.log)
+                            .padding()
+                            .frame(maxWidth: .infinity)
                     }
+                    .padding()
                 }
-            )
+            
     }
     
     func calculateAllowedCount() -> Int {

@@ -22,6 +22,7 @@
 		2EC153E02BF1AA8E0021BF8C /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC153DF2BF1AA8E0021BF8C /* AddView.swift */; };
 		2EC153E32BF1AD4C0021BF8C /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC153E22BF1AD4C0021BF8C /* ItemModel.swift */; };
 		2EC153E62BF1B9420021BF8C /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC153E52BF1B9420021BF8C /* ListViewModel.swift */; };
+		2ED528472C3392F400AD800B /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED528462C3392F400AD800B /* LocationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		2EC153DF2BF1AA8E0021BF8C /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		2EC153E22BF1AD4C0021BF8C /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		2EC153E52BF1B9420021BF8C /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		2ED528462C3392F400AD800B /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				2EC153E52BF1B9420021BF8C /* ListViewModel.swift */,
+				2ED528462C3392F400AD800B /* LocationViewModel.swift */,
 			);
 			path = viewModels;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				2EC153E62BF1B9420021BF8C /* ListViewModel.swift in Sources */,
 				2E2FB6E02C2ABB32007C9527 /* DBManager.swift in Sources */,
 				2E91E8A42C2AC058000BFDDF /* StoreKitManager.swift in Sources */,
+				2ED528472C3392F400AD800B /* LocationViewModel.swift in Sources */,
 				2E52F5542BF0FC5500AC9A68 /* TodoSwiftApp.swift in Sources */,
 				2EC153DC2BF1A6AE0021BF8C /* ListView.swift in Sources */,
 				2EC153DE2BF1A8300021BF8C /* ListRowView.swift in Sources */,
@@ -358,8 +362,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TodoSwift/Preview Content\"";
+				DEVELOPMENT_TEAM = 846D5Y9NXV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Allow location to find the altitude";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -369,7 +375,6 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -394,8 +399,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TodoSwift/Preview Content\"";
+				DEVELOPMENT_TEAM = 846D5Y9NXV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Allow location to find the altitude";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -405,7 +412,6 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
